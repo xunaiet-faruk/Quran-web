@@ -1,8 +1,6 @@
 import { notFound } from 'next/navigation';
 import { FaArrowLeft, FaBookOpen } from 'react-icons/fa';
 import localSurahs from '../../data/surahs.json';
-
-// Force static generation for all pages
 export const dynamic = 'force-static';
 export const dynamicParams = true;
 
