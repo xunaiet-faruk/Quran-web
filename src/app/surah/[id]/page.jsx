@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { FaArrowLeft, FaBookOpen } from 'react-icons/fa';
+import localSurahs from '../../data/surahs.json';
 
 async function getSurahData(id) {
     try {
@@ -26,11 +27,10 @@ async function getSurahData(id) {
 }
 
 export async function generateStaticParams() {
-    const res = await fetch('https://api.alquran.cloud/v1/surah', { cache: 'force-cache' });
-    const surahs = await res.json();
-
-    return surahs.data.map((surah) => ({
-        id: surah.number.toString(),
+    // Use local surahs.json as fallback to ensure all 114 surahs are generated
+    // This prevents 404 errors during Vercel deployment when API might fail
+    return localSurahs.map((surah) => ({
+        id: surah.id.toString(),
     }));
 }
 
@@ -61,7 +61,7 @@ export default async function SurahPage({ params }) {
 
     return (
         <div className="min-h-screen bg-black">
-            
+
             <div className="bg-gradient-to-b from-gray-900 to-black py-8 border-b border-[#D1AD3C]/20">
                 <div className="container mx-auto px-4">
                     <div className="flex items-center justify-between">
@@ -90,7 +90,7 @@ export default async function SurahPage({ params }) {
                             className="group bg-gray-900/50 rounded-xl hover:bg-gray-900 transition-all duration-500 hover:scale-[1.01] animate-fadeIn  border-[#D1AD3C] border-b-2 hover:border-[#D1AD3C]/30"
                         >
                             <div className="p-6">
-                               
+
                                 <div className="flex justify-end mb-3">
                                     <span className="bg-[#D1AD3C]/10 text-[#D1AD3C] text-xs font-bold px-3 py-1 rounded-full group-hover:bg-[#D1AD3C] group-hover:text-black transition-all duration-300">
                                         Verse {ayah.number}
@@ -111,7 +111,7 @@ export default async function SurahPage({ params }) {
                                     </div>
                                 </div>
 
-                               
+
                                 <div className="relative my-4">
                                     <div className="absolute inset-0 flex items-center">
                                         <div className="w-full border-t border-gray-800"></div>
