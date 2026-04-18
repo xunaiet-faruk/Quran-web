@@ -1,4 +1,3 @@
-
 'use client';
 import Link from 'next/link';
 import { FaQuran, FaHeart, FaGlobe, FaGithub, FaTwitter, FaEnvelope, FaArrowUp, FaBook, FaSearch, FaCog } from 'react-icons/fa';
@@ -9,20 +8,14 @@ export default function Footer() {
     };
 
     return (
-        <footer className="relative  bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white ">
-           
-
-          
-            <div className="absolute inset-0 opacity-5">
+        <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white w-full overflow-hidden">
+            <div className="absolute inset-0 opacity-5 pointer-events-none">
                 <div className="absolute top-20 left-10 w-64 h-64 bg-[#D1AD3C] rounded-full blur-3xl animate-pulse"></div>
                 <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#D1AD3C] rounded-full blur-3xl animate-pulse delay-1000"></div>
             </div>
 
-            <div className="relative px-6 py-12 ">
-             
+            <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-
-                   
                     <div className="space-y-4">
                         <div className="flex items-center gap-3">
                             <div className="w-12 h-12 bg-[#D1AD3C] rounded-xl flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-300">
@@ -39,7 +32,6 @@ export default function Footer() {
                             A beautiful digital platform to read and understand the Holy Quran with translations,
                             search functionality, and personalized reading experience.
                         </p>
-                       
                         <div className="flex gap-3 pt-2">
                             <a href="#" className="w-9 h-9 bg-gray-700 hover:bg-[#D1AD3C] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
                                 <FaGithub className="w-4 h-4" />
@@ -53,7 +45,6 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    
                     <div className="space-y-4">
                         <h4 className="text-lg font-semibold flex items-center gap-2">
                             <FaBook className="text-[#D1AD3C]" />
@@ -87,7 +78,6 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                 
                     <div className="space-y-4">
                         <h4 className="text-lg font-semibold flex items-center gap-2">
                             <FaCog className="text-[#D1AD3C]" />
@@ -113,7 +103,6 @@ export default function Footer() {
                         </ul>
                     </div>
 
-          
                     <div className="space-y-4">
                         <h4 className="text-lg font-semibold flex items-center gap-2">
                             <FaEnvelope className="text-[#D1AD3C]" />
@@ -160,7 +149,6 @@ export default function Footer() {
                     </div>
                 </div>
 
-        
                 <div className="text-center mt-8">
                     <p className="text-gray-500 text-xs flex items-center justify-center gap-1">
                         Made with <FaHeart className="w-3 h-3 text-red-500 animate-pulse" /> for the Holy Quran
